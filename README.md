@@ -3,11 +3,17 @@ build lfs-10.0 on debian buster live
 
 ## Section 2.2 Host System Requirements
 1. reconfigure dash:
+```bash
 	$ sudo sudo dpkg-reconfigure dash
+```
 2. install bison:
+```bash
 	$ sudo apt install bison
+```
 3. install gawk:
+```bash
 	$ sudo apt install gawk
+```
 
 ## Section 2.4 Creating a New Partition
 1. A root LFS partition (not to be confused with the /root directory) of 20 GB
@@ -38,6 +44,7 @@ build lfs-10.0 on debian buster live
    large packages Gnome or KDE can be installed without embedding the files in
    the /usr hierarchy. If used, 5 to 10 GB is generally adequate.
 
+```bash
    Finally, my partitions:
    /boot	sdb1	200 BM
    /		sdb2	50 GB
@@ -45,6 +52,7 @@ build lfs-10.0 on debian buster live
 			sdb4	extended
    swap		sdb5	4 GB		Will be used when LFS booted
    /home	sdb6	residuary GB
+```
 My partition type is "Linux"
 
 ## Section 2.6 Setting The $LFS Variable
@@ -52,8 +60,9 @@ My partition type is "Linux"
 
 ## Section 2.7 Mounting the New Partition
 1. Modified /etc/fstab with following:
+```bash
    /dev/sdb2       /mnt/lfs        ext4	defaults        1       1
    /dev/sdb1       /mnt/lfs/boot   ext4	defaults        1       1
    /dev/sdb3       /mnt/lfs/opt    ext4	defaults        1       1
    /dev/sdb6       /mnt/lfs/homt   ext4	defaults        1       1
-
+```
