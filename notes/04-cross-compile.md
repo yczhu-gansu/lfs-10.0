@@ -13,9 +13,7 @@ To build a compiler for machine C, we would have three stages:
 | **Stage** | **Build** | **Host** | **Target** | **Action** |
 | --- | --- | --- | --- | --- |
 | 1 | A | A | B | Build cross compiler cc1 using ccA on A |
-| --- | --- | --- | --- | --- |
 | 2 | A | B | B | Build cross compiler cc2 using cc1 on A |
-| --- | --- | --- | --- | --- |
 | 2 | B | C | C | Build cross compiler ccC using cc2 on B |
 
 Then, all the other programs needed by machine C can be compiled using cc2 on
@@ -68,9 +66,7 @@ machine. Only two stages are mandatory, and one more for tests:
 | **Stage** | **Build** | **Host** | **Target** | **Action** |
 | --- | --- | --- | --- | --- |
 | 1 | pc | pc | lfs | build cross compiler cc1 using cc-pc on pc |
-| --- | --- | --- | --- | --- |
 | 2 | pc | lfs | lfs | build compiler cc-lfs using cc1 on pc |
-| --- | --- | --- | --- | --- |
 | 3 | lfs | lfs | lfs | rebuild and test cc-lfs using itself on pc |
 
 In the above table, "on pc" means the commands are run on a machine using
