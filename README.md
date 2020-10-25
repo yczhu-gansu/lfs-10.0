@@ -6,3 +6,5 @@ build LFS-10.0 on Debian Buster (Installed with LiveCD)
 
 ## 2. Key Points
 1. [New Partitions for LFS](./notes/02-partitions.md)
+2. [Overall Build Process](./notes/03-overall-build-process.md)
+3. [About Cross Compile](./notes/04-cross-compile.md)
