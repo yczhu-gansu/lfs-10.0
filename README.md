@@ -12,42 +12,42 @@ build LFS-10.0 on Debian Buster (Installed with LiveCD)
 5. [Gcc Pass 1](./notes/06-gcc-pass-1.md)
 6. [Linux API Headers](./notes/07-linux-api-headers.md)
 7. [Glibc](./notes/08-glibc.md)
-8. [libstdc++](./notes/09-libstdc++.md)
+8. [Libstdc++](./notes/09-libstdc++.md)
 9. [Cross Compiling Temporary Tools](./notes/10-cross-compile-temporary-tools.md)
 10. [M4](./notes/11-m4.md)
-11. [ncurses](./notes/12-ncurses.md)
-12. [bash](./notes/13-bash.md)
-13. [coreutils](./notes/14-coreutils.md)
-14. [diffutils](./notes/15-diffutils.md)
-15. [file](./notes/16-file.md)
-16. [findutils](./notes/17-findutils.md)
-17. [gawk](./notes/18-gawk.md)
-18. [grep](./notes/19-grep.md)
-19. [gzip](./notes/20-gzip.md)
-[](./notes/21-make.md
-[](./notes/22-patch.md
-[](./notes/23-sed.md
-[](./notes/24-tar.md
-[](./notes/25-xz.md
-[](./notes/26-binutils.md
-[](./notes/27-gcc-pass-2.md
-[](./notes/28-enter-chroot.md
-[](./notes/29-lfs-full-structure.md
-[](./notes/30-lsf-essential-files.md
-[](./notes/31-libstdc++-pass2.md
-[](./notes/32-gettext.md
-[](./notes/33-bison.md
-[](./notes/34-perl.md
-[](./notes/35-python.md
-[](./notes/36-textinfo.md
-[](./notes/37-util-linux.md
-[](./notes/38-clean-save-temp-sys.md
-[](./notes/39-build-lfs-sys.md
-[](./notes/40-man-pages.md
-[](./notes/41-tcl.md
-[](./notes/42-expect.md
-[](./notes/43-dejagnu.md
-[](./notes/44-iana-etc.md
-[](./notes/45-glibc.md
-[](./notes/46-zlib.md
-[](./notes/47-bzip.md
+11. [Ncurses](./notes/12-ncurses.md)
+12. [Bash](./notes/13-bash.md)
+13. [Coreutils](./notes/14-coreutils.md)
+14. [Diffutils](./notes/15-diffutils.md)
+15. [File](./notes/16-file.md)
+16. [Findutils](./notes/17-findutils.md)
+17. [Gawk](./notes/18-gawk.md)
+18. [Grep](./notes/19-grep.md)
+19. [Gzip](./notes/20-gzip.md)
+20. [Make](./notes/21-make.md)
+21. [Patch](./notes/22-patch.md)
+22. [Sed](./notes/23-sed.md)
+23. [Tar](./notes/24-tar.md)
+24. [Xz](./notes/25-xz.md)
+25. [Binutils](./notes/26-binutils.md)
+26. [Gcc Pass 2](./notes/27-gcc-pass-2.md)
+27. [Enter Chroot](./notes/28-enter-chroot.md)
+28. [LFS Full Structure](./notes/29-lfs-full-structure.md)
+29. [LFS Essential Files](./notes/30-lsf-essential-files.md)
+30. [Libstdc++ Pass 2](./notes/31-libstdc++-pass2.md)
+31. [Gettext](./notes/32-gettext.md)
+32. [Bison](./notes/33-bison.md)
+33. [Perl](./notes/34-perl.md)
+34. [Python](./notes/35-python.md)
+35. [Texinfo](./notes/36-textinfo.md)
+36. [Util-linux](./notes/37-util-linux.md)
+37. [Clean up and Saving the Temporary System](./notes/38-clean-save-temp-sys.md)
+38. [Build the LFS system](./notes/39-build-lfs-sys.md)
+39. [Man-pages](./notes/40-man-pages.md)
+40. [Tcl](./notes/41-tcl.md)
+41. [Expect](./notes/42-expect.md)
+42. [DejaGNU](./notes/43-dejagnu.md)
+43. [Iana-Etc](./notes/44-iana-etc.md)
+44. [Glibc](./notes/45-glibc.md)
+45. [Zlib](./notes/46-zlib.md)
+46. [Bzip2](./notes/47-bzip.md)
