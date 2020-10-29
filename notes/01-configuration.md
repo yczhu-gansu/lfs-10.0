@@ -11,3 +11,7 @@
 ```bash
 	$ sudo apt install gawk
 ```
+4. install texinfo-4.7
+```bash
+	$ sudo apt install texinfo
+```

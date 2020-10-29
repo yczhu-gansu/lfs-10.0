@@ -1,0 +1,4 @@
+# Section Diffutils
+
+The Diffutils package contains programs that show the differences between files
+or directories.

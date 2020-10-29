@@ -1,0 +1,5 @@
+# Section 8.10 Bzip2
+
+The Bzip2 package contains programs for compressing and decompressing files.
+Compressing text files with bzip2 yields a much better compression percentage
+than with the traditional gzip.

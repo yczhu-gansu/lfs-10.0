@@ -1,9 +1,30 @@
-## Some Terms Used in This Context:
+# Important Preliminary Material
+
+## I. Introduction
+This part is divided into three stages:
+1. Build a cross compiler and its associated libraries;
+2. Use this cross toolchain to build several utilities in a way that isolates
+   them from the host distribution;
+3. Enter the chroot environment, which further imporves host isolation, and
+   build the remaining tools needed to build the final system.
+
+## Toolchain Technical Notes
+The overall goal of Chapter 5 and Chapter 6 is to produce a temporary area that
+contains a known-good set of tools that can be isolated from the host system.
+
+By using **chroot**,  the commands in the remaining chapters will be contained
+within that environment, ensuring a free, trouble-free build of the target LFS
+system.
+
+The build process is based on the process of cross-compilation.
+
+### About cross-Compilation
+Some Terms Used in This Context:
 1. build, is the machine we build programs.
 2. host, is the machine/system where the built programs will rum.
 3. target, is the machine the compiler produces code for.
 
-## A Scenario
+A example scenario
 1. Machine A, a slow machine, with a compiler named ccA;
 2. Machine B, a fast machine, with no compiler;
 3. Machine C, we want to produce code for.
@@ -34,7 +55,7 @@ produce code for a machine that is different from the one they are run on.
 The other compilers ccA and ccC produce code for the machine they are run on.
 Such compilers are called native compilers.
 
-## Implementation of Cross-Compilation for LFS
+### Implementation of Cross-Compilation for LFS
 1. Machine triplet: cpu-vendor-kernel-os.
 
 A simple way to determine your machine triplet is to run the config.guess script
@@ -73,7 +94,7 @@ In the above table, "on pc" means the commands are run on a machine using
 already installed distribution. "On lfs" means the commands are run in a
 chrooted environment.
 
-## More About Cross-Compiling
+4. More About Cross-Compiling
 The C language is not just a compiler, but also defines a standard library, e.g.
 glibc.
 
@@ -90,3 +111,77 @@ The solution to this chicken and egg problem is to first build a degraded cc1
 based on libgbcc, lacking some functionalities such as threads and exception
 handling, then build glibc using this degraded compiler (glibc itself is not
 degraded), the build libstdc++.
+
+Conclusion: cc1 is unable to build a fully functional libstdc++, but this is the
+only compiler available for building the C/C++ libraries during stage 2.
+
+The compiler built during stage 2, cc-lfs, would be able to build those
+libraries, but:
+* the build system of GCC does not know that it is usable on pc, and
+* using it on pc would be at risk of linking to the pc libraries, since cc-lfs
+is a native compiler.
+
+So we have to build libstdc++ later, in chroot.
+
+### Other procedural details
+The cross-compiler will be installed in a separate $LFS/tools directory, since
+it will not be part of the final system.
+
+Binutils is installed first because the *configure* runs both GCC and Glibc
+perform various features tests on the assembler and linker to enable or disable.
+
+Binutils installs its assembler and linker in two locations, $LFS/tools/bin and
+$LFS/tools/$LFS\_TGT/bin. The tools in one location are hard linked to the
+other.
+
+An important facet of the linker is its library search order. Detailed
+information can be obtained from:
+
+The next package installed is GCC.
+
+```bash
+$ $LFS_TGT-ld --verbos | grep SEARCH
+```
+
+will illustrate the current search paths and their order.
+
+```bash
+$ $LFS_TGT-gcc dummy.c -Wl,--verbose 2>&1 | grep succeeded
+```
+
+will show all the files successfully opened druing linking.
+
+To find out which standard linker *gcc* will use, run:
+
+```bash
+$ $LFS_TGT-gcc --print-prog-name=ld
+```
+
+```bash
+$ gcc -v dummy.c
+```
+
+will show detailed information about the processor, compilation, and assembly
+stages, including gcc's included search paths and their order.
+
+Next installed are sanitized Linux API headers. These allow the standard C
+library (Glibc) to interface with features that the Linux kernel will provide.
+
+The next package installed is Glibc.
+
+The standard C++ library is compiled next.
+
+At the end of Chapter 6 the native lfs compiler is installed.
+
+## General Complation Instructions
+To re-emphaise the build process:
+1. Place all the sources and patches in a directory that will be accessible from
+the chroot environment such as */mnt/lfs/sources*.
+2. Change to the sources directory.
+3. For each package:
+	* Using the tar program, extract the package to be tuilt. In Chapter 5 and
+	  Chapter 6, ensure you are the lfs user when extracting the package.
+	* Change to the directory created when the package was extracted.
+	* Follow the book's instructions for building the package.
+	* Change back to the sources directory.
+	* Delete the extracted source directory unless instructed otherwise.
