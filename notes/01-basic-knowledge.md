@@ -14,7 +14,8 @@ AMD/Intel computer.
 
 For building LFS, the gain of building on a 64-bit system compared to a 32-bit
 system is minimal. On the same hardware, the 64-bit build is only 3% faster and
-is 22% larger than the 32-bit build. If you plan to use LFS as a LAMP server, or
+is 22% larger than the 32-bit build. If you plan to use LFS as a LAMP (Linux,
+Apache, MySQL, PHP) server, or
 a firewall, a 32-bit CPU may be largely sufficient. On the other hand, several
 packages in BLFS now need more than 4GB of RAM to be built and/or to run, so
 that if you plan to use LFS as a desktop, the LFS authors recommend building on

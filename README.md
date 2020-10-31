@@ -58,4 +58,4 @@ Build LFS-10.0 on Debian Buster (Installed with LiveCD)
 45. [Zlib](./notes/46-zlib.md)
 46. [Bzip2](./notes/47-bzip.md)
 
-Section 8.26 GCC finished
+Section 8.26 GCC test finished
