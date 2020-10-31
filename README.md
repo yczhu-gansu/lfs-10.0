@@ -1,5 +1,11 @@
 # LFS-10.0
-build LFS-10.0 on Debian Buster (Installed with LiveCD)
+Learning Linux From Scratch
+
+Build LFS-10.0 on Debian Buster (Installed with LiveCD)
+
+## 1. Getting Started
+0. [Motivation](./notes/00-motivation.md)
+1. [Some Basic Knowledge](./notes/01-basic-knowledge.md)
 
 ## 1. Preparation
 1. [Reconfiguration Debian Buster](./notes/01-configuration.md)
