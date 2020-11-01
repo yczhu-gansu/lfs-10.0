@@ -1,5 +1,6 @@
 # LFS-10.0
-build LFS-10.0 on Debian Buster (Installed with LiveCD)
+build LFS-10.0 on Debian Buster (Installed with
+[LiveCD](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.6.0-live/amd64/iso-hybrid/debian-live-10.6.0-amd64-mate.iso))
 
 ## 1. Preparation
 1. [Reconfiguration Debian Buster](./notes/01-configuration.md)
