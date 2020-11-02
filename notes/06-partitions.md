@@ -28,7 +28,7 @@
    the /usr hierarchy. If used, 5 to 10 GB is generally adequate.
 
 ```bash
-   Finally, my partitions:
+   Finally, my partitions (80 GB in total):
    /boot	sdb1	200 BM
    /		sdb2	50 GB
    /opt		sdb3	10 GB
