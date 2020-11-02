@@ -11,24 +11,24 @@ The lists below document the rational for each package in the book.
 1. Acl, Contains utilities to administer Access Control Lists, which are used to
    define more fine-grained discretionary access rights for files and
    directories.
-2. Attr, Contains programs for administering extended attributes on filesystem
+1. Attr, Contains programs for administering extended attributes on filesystem
    objects.
-3. Autoconf, Contains programs for producing shell scripts that can automatically
+1. Autoconf, Contains programs for producing shell scripts that can automatically
    configure source code from a developer's template. It is often needed to
    rebuild a package after updates to the build procedures.
-4. Automake, Contains programs for generating Make files from a templete. It is
+1. Automake, Contains programs for generating Make files from a templete. It is
    often needed to rebuild a package after updates to the build procedures.
-5. Bash, Satisfies an LSB core requirement to provide a Bourne Shell interface to
+1. Bash, Satisfies an LSB core requirement to provide a Bourne Shell interface to
    the system. It was chosen over other shell packages because of its common
    usage and extensive capabilities beyond basic shell functions.
-6. Bc, Provides an arbitrary precision numeric processing language. It satifies
+1. Bc, Provides an arbitrary precision numeric processing language. It satifies
    a requirement needed when building the Linux kernel.
-7. Binutils, Contains a linker, an assembler, and other tools for handling
+1. Binutils, Contains a linker, an assembler, and other tools for handling
    object files. The programs in this package are needed to compile most of the
    packages in an LFS system and beyond.
-8. Bison, Contains the GNU version of yacc (Yet Another Compiler Compiler)
+1. Bison, Contains the GNU version of yacc (Yet Another Compiler Compiler)
    needed to build serveral other LFS programs.
-9. Bzip2, Contains programs for compressing and decompressing files. It is
+1. Bzip2, Contains programs for compressing and decompressing files. It is
    required to decompress many LFS packages.
 1. Check, Contains a test harness for other programs.
 1. Coreutils, Contains a number of essential programs for viewing and

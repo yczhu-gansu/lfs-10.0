@@ -45,15 +45,18 @@ standards are:
 * [POSIX.1-2008](http://pubs.opengroup.org/onlinepubs/9699919799/)
 * [FHS Version 3.0](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
 * [LSB Version 5.0](http://refspecs.linuxfoundation.org/lsb.shtml)
+
 The LSB has four separate standards:
-* Core
-* Desktop
-* Runtime Languages
-* Imaging
+1. Core
+1. Desktop
+1. Runtime Languages
+1. Imaging
+
 In addition to generic requirements there are also architecture specific
 requirements. There are also two areas for trial use:
-* Gtk3
-* Graphics
+1. Gtk3
+1. Graphics
+
 LFS attempts to conform to the architectures discussed in the previous section.
 
 ### Packages supplied by LFS needed to satifsy the LSB Requirements

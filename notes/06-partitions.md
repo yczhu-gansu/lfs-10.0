@@ -38,14 +38,12 @@
 ```
 My partition type is "Linux"
 
-# Section 2.6 Setting The $LFS Variable
-1. Modified /root/.bashrc with "export LFS=/mnt/lfs"
-
-# Section 2.7 Mounting the New Partition
-1. Modified /etc/fstab with following:
+# Section 2.5 Creating a File System on the Partition
+1. To create an *ext4* file system on the LFS partition:
 ```bash
-   /dev/sdb2       /mnt/lfs        ext4	defaults        1       1
-   /dev/sdb1       /mnt/lfs/boot   ext4	defaults        1       1
-   /dev/sdb3       /mnt/lfs/opt    ext4	defaults        1       1
-   /dev/sdb6       /mnt/lfs/homt   ext4	defaults        1       1
+# mkfs -v -t ext4 /dev/<xxx>
+```
+2. If a new *swap* partition was created, it will need to be initialized with:
+```bash
+# mkswap /dev/<yyy>
 ```
