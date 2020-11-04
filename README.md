@@ -1,7 +1,7 @@
 # LFS-10.0
 Learning Linux From Scratch
 
-build LFS-10.0 on Debian Buster ([Installed with
+Build LFS-10.0 on Debian Buster ([Installed with
 LiveCD](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.6.0-live/amd64/iso-hybrid/debian-live-10.6.0-amd64-mate.iso))
 
 ## 0. Getting Started
@@ -13,8 +13,9 @@ LiveCD](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.6.0-live/amd64/iso-hyb
 
 ## 1. Preparation for the Build
 1. [Host System Requirement](./notes/05-host-system-require.md)
-2. [Creating a New Partitions](./notes/06-partitions.md)
-3. [Set up Working Environment](./notes/07-setup-work-env.md)
+2. [Building LFS in Stages](./notes/06-stages.md)
+2. [Creating a New Partitions](./notes/07-partitions.md)
+3. [Set up Working Environment](./notes/08-setup-work-env.md)
 
 ## 2. Key Points
 2. [Overall Build Process](./notes/03-build-cross-toolchain-temporary-tools.md)

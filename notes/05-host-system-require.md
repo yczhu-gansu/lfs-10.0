@@ -13,7 +13,7 @@
 ```
 2. Reconfigure dash, required by the LFS book:
 ```bash
-	$ sudo sudo dpkg-reconfigure dash
+	$ sudo dpkg-reconfigure dash
 ```
 3. Install bison, required by the LFS book:
 ```bash

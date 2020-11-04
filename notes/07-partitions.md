@@ -1,8 +1,27 @@
 # Section 2.4 Creating a New Partition
-1. A root LFS partition (not to be confused with the /root directory) of 20 GB
-   is a good compromise for most systems. My 50 GB
-2. Generally the recommended size of the swap partition is about twice the
-   amount of the phycial RAM, howere this is rarely needed. My 4 GB
+The Recommended approach to building an LFS system is to use an available empty
+partition or, if you have enough unpartitioned space, to create one.
+
+A minimal system requires a partition of around 10 gigabytes (GB) (Store all the
+tarballs and compile the packages).
+
+If the LFS system is intended to be the primary system, additional software will
+probably be installed. A 30 GB partition is a reasonable size to provide for
+growth.
+
+Because there is not always enough Random Access Memory (RAM) available for
+compilation, it is a good idea to use a small disk partition as *swap* space.
+This is used by the kernel to store seldom-used data and leave more memory
+available for active processes.
+
+## The Root Partition
+A root LFS partition (not to be confused with the /root directory) of 20 GB is a
+good compromise for most systems. My 50 GB
+
+## The Swap Partition
+Generally the recommended size of the swap partition is about twice the amount
+of the phycial RAM, howere this is rarely needed. My 4 GB
+
 3. If the boot disk has been partitioned with a GUID Partition Table (GPT),
    then a small, typically 1 MB, partition must be created if it does not
    already exist.
