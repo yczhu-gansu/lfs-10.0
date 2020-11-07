@@ -16,11 +16,14 @@ LiveCD](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.6.0-live/amd64/iso-hyb
 2. [Building LFS in Stages](./notes/06-stages.md)
 2. [Creating a New Partitions](./notes/07-partitions.md)
 3. [Set up Working Environment](./notes/08-setup-work-env.md)
+4. [Packages and Patches](./notes/09-packages.md)
+5. [Temporary System Environment](./notes/10-tmp-sys-env.md)
+
+## 2. Building the LFS Cross Toolchain and Temporary Tools
+1. [Important Preliminary Material](./notes/11-preliminary.md)
+2. [Compiling a Cross-Toolchain](./notes/12-compile-cross-toolchain.md)
 
 ## 2. Key Points
-2. [Overall Build Process](./notes/03-build-cross-toolchain-temporary-tools.md)
-3. [About Cross Compile](./notes/04-intro-cross-compiler.md)
-4. [Binutils Pass 1](./notes/05-binutils-pass-1.md)
 5. [Gcc Pass 1](./notes/06-gcc-pass-1.md)
 6. [Linux API Headers](./notes/07-linux-api-headers.md)
 7. [Glibc](./notes/08-glibc.md)

@@ -1,6 +1,4 @@
-# Set Up Working Environment
-
-## Section 2.6 Setting The $LFS Variable
+# Section 2.6 Setting The $LFS Variable
 One way to ensure that the *LFS* variable is always set is to edit the
 *.bash\_profile* file in both your personal home directory and in
 */root/.bash\_profile* and enter the export command.
@@ -23,7 +21,7 @@ Modify /root/.bashrc, append following line:
 "export LFS=/mnt/lfs"
 ```
 
-## Section 2.7 Mount the New Partition
+# Section 2.7 Mount the New Partition
 If using multiple partitions for LFS (e.g., one for / and another for /usr),
 mount them using
 ```bash
@@ -44,7 +42,7 @@ Modify the host system's /etc/fstab to automatically remount it upon it boot.
    /dev/sdb2       /mnt/lfs        ext4	defaults        1       1
    /dev/sdb1       /mnt/lfs/boot   ext4	defaults        1       1
    /dev/sdb3       /mnt/lfs/opt    ext4	defaults        1       1
-   /dev/sdb6       /mnt/lfs/homt   ext4	defaults        1       1
+   /dev/sdb6       /mnt/lfs/home   ext4	defaults        1       1
 ```
 
 If you are using a *swap* partition, ensure that it is enabled using the
