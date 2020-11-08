@@ -10,3 +10,10 @@ libraries are used when linking.
 Using the utilities will be possible in next chapter after enter the "chroot"
 environment. But all the packages built in the present chapter need to be built
 before we do that. Therefore we cannot be independent of the host system yet.
+
+## Section 6.2 m4
+The m4 package contains a macro processor.
+```bash
+sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/g lib/*.c
+```
+edit files in place (makes backup if SUFFIX supplied).

@@ -21,13 +21,10 @@ LiveCD](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.6.0-live/amd64/iso-hyb
 
 ## 2. Building the LFS Cross Toolchain and Temporary Tools
 1. [Important Preliminary Material](./notes/11-preliminary.md)
-2. [Compiling a Cross-Toolchain](./notes/12-compile-cross-toolchain.md)
+2. [Compiling a Cross-Toolchain](./notes/12-cpil-cross-toolchain.md)
+3. [Cross Compiling Temporary Tools](./notes/13-cross-cpil-tmp-tools.md)
 
 ## 2. Key Points
-5. [Gcc Pass 1](./notes/06-gcc-pass-1.md)
-6. [Linux API Headers](./notes/07-linux-api-headers.md)
-7. [Glibc](./notes/08-glibc.md)
-8. [Libstdc++](./notes/09-libstdc++.md)
 9. [Cross Compiling Temporary Tools](./notes/10-cross-compile-temporary-tools.md)
 10. [M4](./notes/11-m4.md)
 11. [Ncurses](./notes/12-ncurses.md)

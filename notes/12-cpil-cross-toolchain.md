@@ -1,7 +1,7 @@
 # Chapter 5 Compiling a Cross-Toolchain
 
 ## 5.1 Introduction
-This chapter 5 shows how to build a cross-compiler and its associated tools.
+This chapter shows how to build a cross-compiler and its associated tools.
 
 Although here cross-compilation is faked, the principles are the same as for a
 real cross-toolchain.
@@ -21,7 +21,7 @@ It is important that Binutils be the first package compiled because both Glibc
 and GCC perform various tests on the available linker and assembler to
 determine which of their own features to enable.
 
-The meaning of the configure options:
+### The meaning of the configure options:
 ```bash
 --prefix=$LFS/tools
 ```
@@ -165,7 +165,7 @@ lib_cv_slibdir=/lib
 This ensures that the libaray is installed in /lib instead of the default /lib64
 on 64 bit machines.
 
-### The meaning of the configure options
+### The meaning of the make options
 ```bash
 make DESTDIR=$LFS install
 ```
@@ -178,3 +178,29 @@ limits.h header. For doing so, run a utility to provide by the GCC developers.
 ```bash
 $LFS/tools/libexec/gcc/$LFS_TGT/10.2.0/install-tools/mkheaders
 ```
+
+## Section 5.6 Libstdc++ from GCC
+
+Libstdc++ is the standard C++ library. It is needed to compile the C++ code
+(part of GCC is written in C++), but we had to defer its installation when we
+built gcc-pass1 because it depends on glibc, which was not yet available in the
+target directory.
+
+### The meaning of the configure options
+```bash
+--host=...
+```
+Specifies the use the cross compiler we have just built instead of the one in
+/usr/bin.
+```bash
+--disable-libstdcxx-pch
+```
+Prevents the installation of precompiled include files, which are not needed at
+this stage.
+```bash
+--with-gxx-include-dir=/tools/$LFS_TGT/include/c++/10.2.0
+```
+This is the location where the C++ compiler should search for the standard
+include files. In a normal build, this information is automatically passed to
+the libstdc++ configure options from the top level directory. In our case, this
+information must be explicitly given.
