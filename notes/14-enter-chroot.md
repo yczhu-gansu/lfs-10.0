@@ -10,16 +10,38 @@ running kernel must be established. This is done through the so-called Virtual
 Kernel File Systems, which must be mounted when entering the chroot environment.
 You man want to check that they are mounted by issuing *findmnt*
 
+## Section 7.3 Changing Ownership
+Currently, the whole directory hierarchy in $LFS is owned by the user *lfs*, a
+user that exists only on the host system.
+
+If the directories and files under $LFS are kept as they are, they will be owned
+by a user ID without corresponding account. This is dangerous because a user
+account created later could get this same user ID and would own all the files
+under $LFS, thus exposing those files to possible malicious manipulation.
+
+```bash
+chown -R root:root $LFS/{usr,lib,lib64,var,etc,bin,sbin,tools}
+```
+
 ## Section 7.3 Preparing Virtual Kernel File Systems
 Various file systems exported by the kernel are used to communicate to and from
 the kernel itself. These file systems are virtual in that no disk space is used
 for them. The content of the file systems resides in memory.
 
+Directories onto which the file systems will be mounted:
+```bash
+mkdir -pv $LFS/{dev,proc,sys,run}
+```
+### 7.3.1 Creating Initial Device Nodes
 When the kernel boots the system, it requires the presence of a few device
 nodes, in particular the *console* and *null* devices. The device nodes must be
 created on the hard disk so that they are available before the kernel populates
 */dev*, and additionally when Linux is started with *init=/bin/bash*
-
+```bash
+mknod -m 600 $LFS/dev/console c 5 1
+mknod -m 666 $LFS/dev/null c 1 3
+```
+### 7.3.2 Mount and Populating /dev
 The recommended method of populating the */dev* directory with devices is to
 mount a virtual filesystem (such as *tmpfs*) on the */dev* directory, and allow
 the devices to be created dynamically on that virtual filesystem as they are
@@ -32,8 +54,18 @@ system's */dev* directory.
 
 A bind mount is a special type of mount that allows you to create a mirror of a
 directory or mount point to some other location.
+```bash
+mount -v --bind /dev $LFS/dev
+```
+### 7.3.3 Mounting Virtual Kernel File Systems
+```bash
+mount -v --bind /dev/pts $LFS/dev/pts
+mount -vt proc proc $LFS/proc
+mount -vt sysfs sysfs $LFS/sys
+mount -vt tmpfs tmpfs $LFS/run
+```
 
-## Entering the Chroot Environment
+## Section 7.4 Entering the Chroot Environment
 As user root, run the following command to enter the environment that is, at the
 moment, populated with only temporary tools:
 ```bash

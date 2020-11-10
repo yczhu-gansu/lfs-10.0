@@ -24,25 +24,9 @@ LiveCD](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.6.0-live/amd64/iso-hyb
 2. [Compiling a Cross-Toolchain](./notes/12-cpil-cross-toolchain.md)
 3. [Cross Compiling Temporary Tools](./notes/13-cross-cpil-tmp-tools.md)
 
+## 3. Entering Chroot and Building Additional Temporary Tools
+1. 
 ## 2. Key Points
-9. [Cross Compiling Temporary Tools](./notes/10-cross-compile-temporary-tools.md)
-10. [M4](./notes/11-m4.md)
-11. [Ncurses](./notes/12-ncurses.md)
-12. [Bash](./notes/13-bash.md)
-13. [Coreutils](./notes/14-coreutils.md)
-14. [Diffutils](./notes/15-diffutils.md)
-15. [File](./notes/16-file.md)
-16. [Findutils](./notes/17-findutils.md)
-17. [Gawk](./notes/18-gawk.md)
-18. [Grep](./notes/19-grep.md)
-19. [Gzip](./notes/20-gzip.md)
-20. [Make](./notes/21-make.md)
-21. [Patch](./notes/22-patch.md)
-22. [Sed](./notes/23-sed.md)
-23. [Tar](./notes/24-tar.md)
-24. [Xz](./notes/25-xz.md)
-25. [Binutils](./notes/26-binutils.md)
-26. [Gcc Pass 2](./notes/27-gcc-pass-2.md)
 27. [Enter Chroot](./notes/28-enter-chroot.md)
 28. [LFS Full Structure](./notes/29-lfs-full-structure.md)
 29. [LFS Essential Files](./notes/30-lsf-essential-files.md)
@@ -63,5 +47,3 @@ LiveCD](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.6.0-live/amd64/iso-hyb
 44. [Glibc](./notes/45-glibc.md)
 45. [Zlib](./notes/46-zlib.md)
 46. [Bzip2](./notes/47-bzip.md)
-
-Section 8.46 libelf from elfutils finished
