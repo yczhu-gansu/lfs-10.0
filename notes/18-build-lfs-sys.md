@@ -1,4 +1,5 @@
-# Part IV. Building the LFS System
+# Introduction and Package management
+
 ## Chapter 8 Installing Basic System Software
 ### 8.1 Introduction
 In this chapter, we start constructing the LFS system in earnest.

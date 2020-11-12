@@ -1,5 +1,79 @@
-# Section 8.8 Glibc
+# Basic System Software
 
+## Section 8.3 Man-pages
+The Man-package contains over 2,200 man pages.
+
+Installed various man pages.
+
+Describe C programming language functions, import device files, and significant
+configuration files.
+### Installed files
+various man pages, Describe C programming language functions, important device
+files, and significant configuration files.
+
+## Section 8.4 Tcl
+The Tcl package contains the Tool Command Language, a robust general-purpose
+scripting language. The Expect package is written in the Tcl language.
+
+The various "sed" instructions after the "make" command removes references to
+the build directory from the configuration files and replaces them with the
+install directory. This is not mandatory for the remainder of LFS, but may be
+needed in case a package built later uses Tcl.
+
+### Installed programs:
+* tclsh (link to tclsh8.6), A link to tclsh8.6
+* tclsh8.6, The Tcl command shell
+
+### Installed library:
+* libtcl8.6.so, The Tcl library
+* libtclstub8.6.a, The Tcl Stub library
+
+## Section 8.5 Expect
+The Expect package contains tools for automating, via scripted dialogues,
+interactive applications such as:
+* telnet
+* ftp
+* passwd
+* fsck
+* rlogin
+* tip
+Expect is also useful for testing these same applications as well as easing all
+sorts of tasks that are prohibitively difficult with anything else.
+
+The DejaGnu framework is written in Expect.
+
+### The meaning of the configure options
+```bash
+--with-tcl=/usr/lib
+```
+This parameter is needed to tell configure where the tclConfig.sh script is
+located.
+```bash
+--with-tclinclude=/usr/include
+```
+This explicitly tells Expect where to find Tcl's internal headers.
+## Installed program:
+* expect, Communicates with other interactive programs according to a script
+## Installed library:
+* libexpect-5.45.so, Contains functions that allow Expect to be used as a Tcl
+  extension or to be used directly from C or C++ (without Tcl).
+
+## Section 8.6 DejaGNU
+The DejaGNU package contains a framework for running test suites on GNU tools.
+It is written in expect, which itself uses Tcl (Tool Command Language).
+### Installed program
+* runtest, A wrapper script that locates the proper expect shell and then runs
+  DejaGNU.
+
+## Section 8.7 Iana-Etc
+The Iana-Etc package provides data for network services and protocols.
+### Installed files:
+* /etc/protocols, Describes the various DARPA Internet protocols that are
+  available from the TCP/IP subsystem.
+* /etc/services, Provides a mapping between friendly textual names for internet
+  services, and their underlying assigned port numbers and protocol types.
+
+## Section 8.8 Glibc
 The Glibc package contains the main C library. This library provides the basic
 routines for:
 * allocating memory,
@@ -10,8 +84,7 @@ routines for:
 * pattern matching,
 * arithmetic,
 * ...
-
-## Configure Arguments
+### The meaning of the configure options
 ```bash
 --disable-werror
 ```
@@ -37,8 +110,7 @@ libc_cv_slibdir=/lib
 ```
 This variable sets the correct library for all systems. We do not want lib64 to
 be used.
-
-## Locales
+### Locales
 The locales can make the system respond in a different language. None of the
 locales are required, but if some of them missing, the test suits of the future
 packages would skip important testcases.
@@ -54,18 +126,17 @@ following time-consuming command:
 ```bash
 make localdata/install-locales
 ```
-
-## Configuring Glibc
-### Adding nsswitch.conf
+### Configuring Glibc
+#### Adding nsswitch.conf
 The /etc/nsswitch.conf file needs to be created because the Glibc defaults do
 not work well in a networked environment.
 
-### Adding time zone data
+#### Adding time zone data
 ```bash
 tar -xf ../../tzdata2020a.tar.gz
 ```
 
-The meaning of the zic commands:
+### The meaning of the zic commands:
 ```bash
 zic -L /dev/null ...
 ```
@@ -87,7 +158,6 @@ zic ... -p ...
 ```
 This creates the *posixrules* file. We use New York because POSIX requires the
 daylight savings time rules to be in accordance with US rules.
-
 ### Configuring the Dynamic Loader
 By default, the dynamic loader (/lib/ld-linux.so.2) searches through */lib* and
 */usr/lib* for dynamic libraries that are needed by programs as they are run.
@@ -100,8 +170,7 @@ Two directories that are commonly known to contain additional libraries are
 */usr/local/lib* and */opt/lib*, so add those directories to the dynamic
 loader's search path.
 
-## Contents of Glibc
-Installed programs:
+### Installed programs:
 * catchsegv, Can bu used to creat a stack trace when a program terminates with
   segmentation fault
 * gencat, Generates message catalogues
@@ -132,7 +201,7 @@ Installed programs:
 * zdump, The time zone dumper
 * zic, The time zone compiler
 
-Installed libraries:
+### Installed libraries:
 * ld-2.32.so, The helper program for shared library executables
 * libBrokenLocale, Used internally by Glibc as a gross hack to get broken
   programs (e.g., some Motif applications) running. See comments in

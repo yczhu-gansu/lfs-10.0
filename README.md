@@ -23,27 +23,13 @@ LiveCD](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.6.0-live/amd64/iso-hyb
 1. [Important Preliminary Material](./notes/11-preliminary.md)
 2. [Compiling a Cross-Toolchain](./notes/12-cpil-cross-toolchain.md)
 3. [Cross Compiling Temporary Tools](./notes/13-cross-cpil-tmp-tools.md)
+4. [Enter Chroot](./notes/14-enter-chroot.md)
+5. [Creating Directories and Essential Files](./notes/15-dirs-files.md)
+6. [Additional Temporary Tools](./notes/16-addi-tools.md)
+7. [Cleaning up and Saving the Temporary System](./notes/17-clean-save-temp-sys.md)
 
-## 3. Entering Chroot and Building Additional Temporary Tools
-1. 
-## 2. Key Points
-27. [Enter Chroot](./notes/28-enter-chroot.md)
-28. [LFS Full Structure](./notes/29-lfs-full-structure.md)
-29. [LFS Essential Files](./notes/30-lsf-essential-files.md)
-30. [Libstdc++ Pass 2](./notes/31-libstdc++-pass2.md)
-31. [Gettext](./notes/32-gettext.md)
-32. [Bison](./notes/33-bison.md)
-33. [Perl](./notes/34-perl.md)
-34. [Python](./notes/35-python.md)
-35. [Texinfo](./notes/36-textinfo.md)
-36. [Util-linux](./notes/37-util-linux.md)
-37. [Clean up and Saving the Temporary System](./notes/38-clean-save-temp-sys.md)
-38. [Build the LFS system](./notes/39-build-lfs-sys.md)
-39. [Man-pages](./notes/40-man-pages.md)
-40. [Tcl](./notes/41-tcl.md)
-41. [Expect](./notes/42-expect.md)
-42. [DejaGNU](./notes/43-dejagnu.md)
-43. [Iana-Etc](./notes/44-iana-etc.md)
-44. [Glibc](./notes/45-glibc.md)
-45. [Zlib](./notes/46-zlib.md)
-46. [Bzip2](./notes/47-bzip.md)
+## 3. Building the LFS system
+1. [Preparation](./notes/18-build-lfs-sys.md)
+2. [Basic System Software](./notes/19-basic-soft.md)
+
+configure 8.8 glibc finished
