@@ -32,4 +32,4 @@ LiveCD](https://mirrors.tuna.tsinghua.edu.cn/debian-cd/10.6.0-live/amd64/iso-hyb
 1. [Preparation](./notes/18-build-lfs-sys.md)
 2. [Basic System Software](./notes/19-basic-soft.md)
 
-configure 8.8 glibc finished
+8.26 gcc finished
